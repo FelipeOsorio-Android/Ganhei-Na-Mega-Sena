@@ -3,13 +3,10 @@ package com.example.ganheinamegasena.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ganheinamegasena.databinding.ItemNumbersBetsBinding
+import com.example.ganheinamegasena.databinding.ItemBetBinding
 import com.example.ganheinamegasena.viewholder.NumbersBetsViewHolder
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.emptyFlow
-import kotlinx.coroutines.flow.update
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -21,8 +18,9 @@ class NumbersBetsAdapter : RecyclerView.Adapter<NumbersBetsViewHolder>() {
         MutableStateFlow(bets)
     private val listNumberBet get() = _listNumberBet.asStateFlow()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumbersBetsViewHolder {
-        val item = ItemNumbersBetsBinding.inflate(
+        val item = ItemBetBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
